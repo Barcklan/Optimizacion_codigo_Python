@@ -154,22 +154,22 @@ Se creó un context manager personalizado para medir el tiempo de ejecución de 
 ![image](https://github.com/user-attachments/assets/67b08a0a-2508-4f08-a4e4-2e60ab0f31b9)
 
 3. 📸 **Salida del programa en consola mostrando tiempos**
-        **Función de cómputo intensivo (con bucles nativos)**
+**Función de cómputo intensivo (con bucles nativos)**
    
         Resultado (bucles): 333333283333335000000
         Tiempo (bucles): 0.98610 segundos
    
-        **Optimización con NumPy (vectorización)**
+**Optimización con NumPy (vectorización)**
    
         Resultado (NumPy): 1291890006563070912
         Tiempo (NumPy): 0.07276 segundos
    
-        **Optimización con Numba**
+**Optimización con Numba**
    
         Resultado (Numba): 1291890006563070912
         Tiempo (Numba): 0.01625 segundos
    
-        **Uso de Context Manager personalizado para medición**
+**Uso de Context Manager personalizado para medición**
    
         [NumPy vectorizado] Tiempo: 0.05323 segundos
         [Bucles con Numba] Tiempo: 0.01695 segundos
