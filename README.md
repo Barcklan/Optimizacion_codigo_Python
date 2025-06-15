@@ -34,9 +34,9 @@ Se creó un context manager personalizado para medir el tiempo de ejecución de 
 
 | Método             | Tiempo Aproximado (segundos) |
 |--------------------|------------------------------:|
-| Bucles Nativos     | 2.45                          |
-| NumPy Vectorizado  | 0.05                          |
-| Numba              | 0.01                          |
+| Bucles Nativos     | 0.98610                          |
+| NumPy Vectorizado  | 0.07276                          |
+| Numba              | 0.01625                          |
 
 > *Nota: Los tiempos pueden variar dependiendo del equipo utilizado.*
 
