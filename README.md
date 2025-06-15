@@ -153,6 +153,7 @@ Se creó un context manager personalizado para medir el tiempo de ejecución de 
 
 
 3. 📸 **Salida del programa en consola mostrando tiempos**
+
 **Función de cómputo intensivo (con bucles nativos)**
    
         Resultado (bucles): 333333283333335000000
