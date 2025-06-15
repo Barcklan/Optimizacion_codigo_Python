@@ -53,8 +53,107 @@ Se creó un context manager personalizado para medir el tiempo de ejecución de 
 
 ## 4. Capturas de Pantalla
 
-1. 📸 **Código fuente en editor (VS Code, Jupyter, etc.)**
-2. 📸 **Salida del programa en consola mostrando tiempos**
+1. 📸 **Código fuente en editor (Google Colab)**
+
+        import time
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from numba import jit
+        from contextlib import contextmanager
+
+        # Función intensiva usando bucles nativos
+        def suma_productos_bucles(arr1, arr2):
+            total = 0
+            for i in range(len(arr1)):
+                total += arr1[i] * arr2[i]
+            return total
+
+        # Generar datos grandes
+        n = 10_000_000
+        a = list(range(n))
+        b = list(range(n))
+
+        # Medir tiempo de ejecución
+        start_time = time.time()
+        resultado_bucles = suma_productos_bucles(a, b)
+        tiempo_bucles = time.time() - start_time
+
+        print(f"Resultado (bucles): {resultado_bucles}")
+        print(f"Tiempo (bucles): {tiempo_bucles:.5f} segundos")
+
+        # Convertir a arrays NumPy
+        a_np = np.array(a)
+        b_np = np.array(b)
+
+        # Medir tiempo con vectorización
+        start_time = time.time()
+        resultado_numpy = np.sum(a_np * b_np)
+        tiempo_numpy = time.time() - start_time
+
+        print(f"Resultado (NumPy): {resultado_numpy}")
+        print(f"Tiempo (NumPy): {tiempo_numpy:.5f} segundos")
+
+        # Optimización con Numba
+        @jit(nopython=True)
+        def suma_productos_numba(arr1, arr2):
+            total = 0
+            for i in range(len(arr1)):
+                total += arr1[i] * arr2[i]
+            return total
+
+        # Convertir listas a NumPy para compatibilidad con Numba
+        a_nb = np.array(a)
+        b_nb = np.array(b)
+
+        # Primera ejecución (puede tardar más por la compilación)
+        suma_productos_numba(a_nb, b_nb)
+
+        # Medición real
+        start_time = time.time()
+        resultado_numba = suma_productos_numba(a_nb, b_nb)
+        tiempo_numba = time.time() - start_time
+
+        print(f"Resultado (Numba): {resultado_numba}")
+        print(f"Tiempo (Numba): {tiempo_numba:.5f} segundos")
+        from contextlib import contextmanager
+
+        @contextmanager
+        def medir_tiempo(etiqueta):
+            start = time.time()
+            yield
+            end = time.time()
+            print(f"[{etiqueta}] Tiempo: {end - start:.5f} segundos")
+
+        # Ejemplo de uso
+        with medir_tiempo("NumPy vectorizado"):
+            np.sum(a_np * b_np)
+
+        with medir_tiempo("Bucles con Numba"):
+            suma_productos_numba(a_nb, b_nb)
+        # Tiempos hipotéticos obtenidos (en segundos)
+        metodos = ['Bucles Nativos', 'NumPy Vectorizado', 'Numba']
+        tiempos = [2.45, 0.05, 0.01]
+
+        # Crear la gráfica de barras
+        plt.figure(figsize=(10, 6))
+        bars = plt.bar(metodos, tiempos, color=['skyblue', 'lightgreen', 'orange'])
+
+        # Añadir etiquetas de valor sobre las barras
+        for bar in bars:
+            yval = bar.get_height()
+            plt.text(bar.get_x() + bar.get_width()/2.0, yval + 0.05, f'{yval:.2f}', ha='center', va='bottom')
+
+        plt.title('Comparación de Tiempo de Ejecución por Método')
+        plt.ylabel('Tiempo (segundos)')
+        plt.ylim(0, max(tiempos) + 0.5)
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+        plt.tight_layout()
+        plt.show()
+
+![image](https://github.com/user-attachments/assets/67b08a0a-2508-4f08-a4e4-2e60ab0f31b9)
+
+3. 📸 **Salida del programa en consola mostrando tiempos**
 
 ---
 
