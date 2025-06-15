@@ -187,7 +187,7 @@ La optimización del código en Python puede marcar una gran diferencia en el re
 
 ## 📁 Archivos Incluidos
 
-- `main.py`: Código principal con todas las versiones.
+- `MLM2S5-Actividad Clase 5-Claudio-Díaz.ipynb`: Código principal en Python con la actividad de la clase 5.
 - `README.md`: Este documento.
 - `requirements.txt`: NumPy y Numba como dependencias (si se incluye).
 
@@ -196,4 +196,4 @@ La optimización del código en Python puede marcar una gran diferencia en el re
 ## ▶️ Requisitos
 
 ```bash
-pip install numpy numba
+pip install numpy numba matplotlib time
