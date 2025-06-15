@@ -151,7 +151,6 @@ Se creó un context manager personalizado para medir el tiempo de ejecución de 
         plt.tight_layout()
         plt.show()
 
-![image](https://github.com/user-attachments/assets/67b08a0a-2508-4f08-a4e4-2e60ab0f31b9)
 
 3. 📸 **Salida del programa en consola mostrando tiempos**
 **Función de cómputo intensivo (con bucles nativos)**
