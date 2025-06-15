@@ -1,4 +1,6 @@
 # Optimización de Código en Python
+## Actividad Clase 5 - Módulo 2
+### Claudio Andrés Díaz Vargas
 
 ## 🎯 Objetivo
 Demostrar comprensión teórica y práctica de técnicas de optimización de código en Python mediante el análisis de rendimiento de funciones computacionalmente intensivas.
