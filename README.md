@@ -195,4 +195,4 @@ La optimización del código en Python puede marcar una gran diferencia en el re
 ## ▶️ Requisitos
 
 ```bash
-pip install numpy numba
+pip install numpy numba contextlib
