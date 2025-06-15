@@ -173,7 +173,7 @@ Se creó un context manager personalizado para medir el tiempo de ejecución de 
    
         [NumPy vectorizado] Tiempo: 0.05323 segundos
         [Bucles con Numba] Tiempo: 0.01695 segundos
-
+** Comparación de tiempo de ejecución por Método **
 ![image](MLM2S5.png)
 ---
 
